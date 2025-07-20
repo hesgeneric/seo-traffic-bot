@@ -2,24 +2,24 @@ name: SEO Bot
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"  # Her 15 dakikada bir çalışır
   workflow_dispatch:
 
 jobs:
-  run-bot:
+  seo-bot-job:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Reposyu çek
+      - name: Repo'yu klonla
         uses: actions/checkout@v3
 
-      - name: Node.js kur
+      - name: Node.js ortamını kur
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '20'
 
-      - name: Playwright + Bot'u çalıştır
-        run: |
-          npm install
-          npx playwright install --with-deps
-          node index.js
+      - name: Bağımlılıkları yükle
+        run: npm install
+
+      - name: SEO botu çalıştır
+        run: node index.js
