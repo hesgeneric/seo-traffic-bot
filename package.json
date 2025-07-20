@@ -1,10 +1,10 @@
 {
-  "name": "seo-crawler-runner",
+  "name": "seo-traffic-bot",
   "version": "1.0.0",
-  "description": "GitHub SEO bot with Puppeteer",
-  "main": "crawler.js",
+  "description": "SEO bot with Puppeteer on GitHub Actions",
+  "main": "index.js",
   "scripts": {
-    "start": "node crawler.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "puppeteer": "^21.3.6"
